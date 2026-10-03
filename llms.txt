@@ -1,0 +1,38 @@
+# Pranauv Shrinaath S
+
+> Pranauv Shrinaath S (known as Keni) is a founder and systems engineer in Chennai, India. CEO & Founder of NorthWind Cipher. Former intern at the National University of Singapore.
+
+## Who is Pranauv Shrinaath?
+
+Pranauv Shrinaath S, known as Keni, is a founder and systems engineer obsessed with building difficult technical systems from scratch. His work spans distributed systems, operating systems, networking, modern and post-quantum cryptography, trusted execution environments (TEEs), confidential computing, quantum computing and AI infrastructure. He has built 60+ projects including his own operating system, programming language and compiler. He is currently CEO & Founder of NorthWind Cipher, which builds verifiable infrastructure for AI systems. He is a former intern at the National University of Singapore (Big Data & Deep Learning) and studies B.Tech Computer Science (AI & ML) at SRM Institute of Science and Technology (graduating 2028, CGPA 9.14/10).
+
+## Key facts
+
+- Name: Pranauv Shrinaath S (nickname: Keni)
+- Role: Founder & Systems Engineer
+- Company: CEO & Founder — NorthWind Cipher (https://northwindcipher.com)
+- Location: Chennai, India
+- Education: SRM Institute of Science and Technology, B.Tech CSE (AI & ML), 2028
+- Former Intern: National University of Singapore — Big Data & Deep Learning
+- Email: pranauvkeni@gmail.com
+
+## Selected projects
+
+- CooL — cryptographic observability SDK for verifiable AI (https://github.com/Northwind-Cipher/cool-sdk)
+- REMIT — authorization layer for autonomous AI commerce (https://github.com/KenidoesCode/remit)
+- Post-Quantum IPsec — ML-KEM hybrid prototype for IKEv2 (https://github.com/KenidoesCode/ipsec-pqc-ikev2)
+- Confidential AI Inference — TEE-based verifiable AI workloads
+- THE OG TECHUILAGUY — computing ecosystem from first principles (https://github.com/KenidoesCode/THE-OG-TECHUILAGUY)
+- OGLang — own programming language and compiler
+- NetLab — packet-level network simulation in C++
+- RationChain — blockchain ration distribution (Solidity/Ethereum)
+- SUI NFT Loyalty Card (Move/Sui), Practic.ai — AI interview prep
+
+## Links
+
+- Portfolio: https://pranauvshrinaath.com/
+- GitHub: https://github.com/KenidoesCode
+- LinkedIn: https://linkedin.com/in/pranauvshrinaath
+- Instagram: https://instagram.com/techuilaguy
+- LeetCode: https://leetcode.com/in/pranauvshrinaath
+- Book a call: https://cal.com/pranauvshrinaath

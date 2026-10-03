@@ -2057,10 +2057,10 @@ a.chr-hover {
   border-color: #ff1e00;
   color: #fff;
 }
-/* Landing hero — sits under the tagline, revealed with it */
+/* Landing hero — top-aligned with the tagline, on the right */
 .hire-btn-hero {
   position: absolute;
-  top: 12rem;
+  top: 3rem;
   right: 3rem;
   left: auto;
   background: #f0f0f0;
