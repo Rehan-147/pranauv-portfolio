@@ -2061,7 +2061,8 @@ a.chr-hover {
 .hire-btn-hero {
   position: absolute;
   top: 12rem;
-  left: 3rem;
+  right: 3rem;
+  left: auto;
   background: #f0f0f0;
   color: #0a0a0a;
   border: 1px solid #f0f0f0;
@@ -2083,6 +2084,7 @@ a.chr-hover {
   }
   .hire-btn-hero {
     top: 8.5rem;
-    left: 1.5rem;
+    right: 1.5rem;
+    left: auto;
   }
 }
