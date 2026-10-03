@@ -2057,6 +2057,22 @@ a.chr-hover {
   border-color: #ff1e00;
   color: #fff;
 }
+/* Landing hero — sits under the tagline, revealed with it */
+.hire-btn-hero {
+  position: absolute;
+  top: 12rem;
+  left: 3rem;
+  background: #f0f0f0;
+  color: #0a0a0a;
+  border: 1px solid #f0f0f0;
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+}
+.hire-btn-hero:hover {
+  background: #ff1e00;
+  border-color: #ff1e00;
+  color: #fff;
+}
 @media (max-width: 768px) {
   .hire-btn {
     font-size: 0.8rem;
@@ -2064,5 +2080,9 @@ a.chr-hover {
   }
   .hire-btn-contact {
     align-self: center;
+  }
+  .hire-btn-hero {
+    top: 8.5rem;
+    left: 1.5rem;
   }
 }

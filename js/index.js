@@ -245,6 +245,7 @@ master
     
     document.getElementById('hero-tagline')?.style.setProperty('will-change', 'opacity, clip-path');
     document.getElementById('hero-bar')?.style.setProperty('will-change', 'opacity, clip-path');
+    document.getElementById('hero-hire')?.style.setProperty('will-change', 'opacity, clip-path');
     document.getElementById('hero-line')?.style.setProperty('will-change', 'transform');
     
     
@@ -346,6 +347,12 @@ master
     duration: 1.0,
     ease: 'power3.inOut',
   }, '-=0.8')
+  .to('#hero-hire', {
+    opacity: 1,
+    clipPath: 'inset(0 0 0% 0)',
+    duration: 1.0,
+    ease: 'power3.inOut',
+  }, '-=0.8')
   .fromTo('#hero-line',
     { opacity: 1, scaleX: 0 },
     { scaleX: 1, duration: 1.0, ease: 'power3.inOut' },
@@ -412,6 +419,7 @@ master.add(() => {
   gsap.set([pContent, tPanelRed, tPanelDark], { willChange: 'auto' });
   document.getElementById('hero-tagline')?.style.setProperty('will-change', 'auto');
   document.getElementById('hero-bar')?.style.setProperty('will-change', 'auto');
+  document.getElementById('hero-hire')?.style.setProperty('will-change', 'auto');
   document.getElementById('hero-line')?.style.setProperty('will-change', 'auto');
   document.querySelectorAll('.ch-top').forEach(el => { el.style.willChange = 'auto'; });
 
@@ -600,6 +608,7 @@ async function setupScrollReveal() {
   scrollTl.fromTo(pContent, { x: introXvw, y: introSettledY }, { x: introXvw, y: 0, duration: 0.3, ease: 'none' }, 0);
   scrollTl.fromTo('#hero-tagline', { opacity: 1 }, { opacity: 0, duration: 0.15, ease: 'none' }, 0);
   scrollTl.fromTo('#hero-bar', { opacity: 1 }, { opacity: 0, duration: 0.15, ease: 'none' }, 0);
+  scrollTl.fromTo('#hero-hire', { opacity: 1 }, { opacity: 0, duration: 0.15, ease: 'none' }, 0);
   scrollTl.fromTo('#hero-line', { opacity: 1 }, { opacity: 0, duration: 0.15, ease: 'none' }, 0);
 
   
