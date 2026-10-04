@@ -82,7 +82,7 @@
         category: 'Blockchain',
         year: '2025',
         tags: ['Move', 'Sui', 'NFTs'],
-        cover: 'assets/images/projects/Covers/Portfolio.avif'
+        cover: 'assets/images/projects/Covers/Anima.avif'
       },
       {
         id: 'practic-ai',
@@ -91,7 +91,7 @@
         category: 'AI Product',
         year: '2025',
         tags: ['AI', 'TypeScript', 'Python'],
-        cover: 'assets/images/projects/Covers/Portfolio.avif'
+        cover: 'assets/images/projects/Covers/Zenith.avif'
       }
     ];
 

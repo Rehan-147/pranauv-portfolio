@@ -95,8 +95,8 @@ gsap.registerPlugin(ScrollTrigger);
 const introBg = document.getElementById('intro-bg');
 const pContent = document.getElementById('preloader-content');
 const pLogo = document.getElementById('preloader-logo');
-const pLuke = document.getElementById('preloader-luke');
-const pBaffait = document.getElementById('preloader-baffait');
+const pFirst = document.getElementById('preloader-first');
+const pLast = document.getElementById('preloader-last');
 const pDot = document.getElementById('preloader-dot');
 const tPanelRed = document.getElementById('t-panel-red');
 const tPanelDark = document.getElementById('t-panel-dark');
@@ -122,45 +122,45 @@ function splitIntoChars(el) {
 }
 
 const logoChar = splitIntoChars(pLogo);
-const lukeChars = splitIntoChars(pLuke);
-const baffaitChars = splitIntoChars(pBaffait);
-const allChars = [...lukeChars, ...baffaitChars];
-const allRevealEls = [...logoChar, ...lukeChars, ...baffaitChars];
+const firstChars = splitIntoChars(pFirst);
+const lastChars = splitIntoChars(pLast);
+const allChars = [...firstChars, ...lastChars];
+const allRevealEls = [...logoChar, ...firstChars, ...lastChars];
 
 
 function getCharGap() {
-  return parseFloat(getComputedStyle(pBaffait).fontSize) * 0.55;
+  return parseFloat(getComputedStyle(pLast).fontSize) * 0.55;
 }
 
 function layoutNames() {
-  const fs = parseFloat(getComputedStyle(pBaffait).fontSize);
+  const fs = parseFloat(getComputedStyle(pLast).fontSize);
   if (!fs) return;
   const baselineOffset = -0.06; 
 
-  const lukeLeft = pLuke.offsetLeft;
-  const lukeWidth = pLuke.offsetWidth;
+  const firstLeft = pFirst.offsetLeft;
+  const firstWidth = pFirst.offsetWidth;
   const gapPx = fs * 0.55;
 
-  const baffaitLeftPx = lukeLeft + lukeWidth + gapPx;
-  pBaffait.style.left = (baffaitLeftPx / fs) + 'em';
-  pBaffait.style.top = baselineOffset + 'em';
+  const lastLeftPx = firstLeft + firstWidth + gapPx;
+  pLast.style.left = (lastLeftPx / fs) + 'em';
+  pLast.style.top = baselineOffset + 'em';
 
-  const dotLeftPx = baffaitLeftPx + pBaffait.offsetWidth;
+  const dotLeftPx = lastLeftPx + pLast.offsetWidth;
   pDot.style.left = (dotLeftPx / fs) + 'em';
   pDot.style.top = baselineOffset + 'em';
 }
 layoutNames();
 
 gsap.set(pLogo, { opacity: 1 });
-gsap.set(pLuke, { opacity: 1 });
-gsap.set(pBaffait, { opacity: 1 });
+gsap.set(pFirst, { opacity: 1 });
+gsap.set(pLast, { opacity: 1 });
 gsap.set(allRevealEls, { yPercent: 110 });
 gsap.set(pDot, { opacity: 0 });
 
 gsap.set([pContent, tPanelRed, tPanelDark], { willChange: 'transform' });
 
 function getTotalWidth() {
-  return pLogo.offsetWidth + pLuke.offsetWidth + getCharGap() + pBaffait.offsetWidth + pDot.offsetWidth;
+  return pLogo.offsetWidth + pFirst.offsetWidth + getCharGap() + pLast.offsetWidth + pDot.offsetWidth;
 }
 
 let keepIntroNameAnchored = false;
@@ -224,7 +224,7 @@ master
   .add(() => {
     layoutNames();
     gsap.set(pContent, { x: -(getTotalWidth() / 2 - pLogo.offsetWidth / 2) });
-    gsap.set(pLuke, { x: 0 });
+    gsap.set(pFirst, { x: 0 });
   })
   .to(allRevealEls, {
     yPercent: 0,
@@ -283,7 +283,7 @@ master
       
       gsap.set(nameLayer, { mixBlendMode: 'difference' });
       const vwSize = (newFontSize / viewportSize.width) * 100;
-      [pLogo, pLuke, pBaffait, pDot].forEach(el => {
+      [pLogo, pFirst, pLast, pDot].forEach(el => {
         el.style.fontSize = `${vwSize}vw`;
       });
       void pContent.offsetWidth;
@@ -459,7 +459,7 @@ async function setupScrollReveal() {
   }
 
   
-  [pContent, pLogo, pLuke, pBaffait, pDot].forEach(el => gsap.killTweensOf(el));
+  [pContent, pLogo, pFirst, pLast, pDot].forEach(el => gsap.killTweensOf(el));
 
   const revealWrap = document.getElementById('reveal-image-wrap');
   const revealSeq = document.querySelectorAll('.reveal-seq');
@@ -624,8 +624,8 @@ async function setupScrollReveal() {
   const exitLeft = mobile ? '-35vw' : '-55vw';
   const exitRight = mobile ? '35vw' : '55vw';
   scrollTl.fromTo(pLogo, { x: '0vw', opacity: 1 }, { x: exitLeft, opacity: 0, duration: 0.7, ease: 'none' }, 0.3);
-  scrollTl.fromTo(pLuke, { x: '0vw', opacity: 1 }, { x: exitLeft, opacity: 0, duration: 0.7, ease: 'none' }, 0.3);
-  scrollTl.fromTo(pBaffait, { x: '0vw', opacity: 1 }, { x: exitRight, opacity: 0, duration: 0.7, ease: 'none' }, 0.3);
+  scrollTl.fromTo(pFirst, { x: '0vw', opacity: 1 }, { x: exitLeft, opacity: 0, duration: 0.7, ease: 'none' }, 0.3);
+  scrollTl.fromTo(pLast, { x: '0vw', opacity: 1 }, { x: exitRight, opacity: 0, duration: 0.7, ease: 'none' }, 0.3);
   scrollTl.fromTo(pDot, { x: '0vw', opacity: 1 }, { x: exitRight, opacity: 0, duration: 0.7, ease: 'none' }, 0.3);
 
   scrollTl.set(nameLayer, { autoAlpha: 0 }, 0.98);
@@ -1771,23 +1771,23 @@ function setupProjectsSection() {
         }
         return inners;
       }
-      var lukeEl = document.querySelector('.footer-name-luke');
-      var baffaitEl = document.querySelector('.footer-name-baffait');
+      var firstEl = document.querySelector('.footer-name-first');
+      var lastEl = document.querySelector('.footer-name-last');
       var dotEl = document.querySelector('.footer-name-dot');
-      if (!lukeEl || !baffaitEl) return;
+      if (!firstEl || !lastEl) return;
 
-      var lukeChars = rebuildChars(lukeEl, true);
-      var baffaitChars = rebuildChars(baffaitEl, false);
+      var firstChars = rebuildChars(firstEl, true);
+      var lastChars = rebuildChars(lastEl, false);
       var dotChars = dotEl ? rebuildChars(dotEl, false) : [];
 
       
       var ordered = [];
-      var lukeRev = lukeChars.slice().reverse();
-      var rightSide = baffaitChars.concat(dotChars);
-      var maxLen = Math.max(lukeRev.length, rightSide.length);
+      var firstRev = firstChars.slice().reverse();
+      var rightSide = lastChars.concat(dotChars);
+      var maxLen = Math.max(firstRev.length, rightSide.length);
       for (var i = 0; i < maxLen; i++) {
         if (rightSide[i]) ordered.push(rightSide[i]);
-        if (lukeRev[i]) ordered.push(lukeRev[i]);
+        if (firstRev[i]) ordered.push(firstRev[i]);
       }
 
       gsap.set(ordered, { yPercent: 110 });
